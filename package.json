@@ -1,0 +1,23 @@
+{
+  "name": "lodging",
+  "version": "0.1.0",
+  "description": "Peer-to-peer lodging on the blockchain. Hosts set their own terms and damage deposits; guests book directly with no 15% middleman.",
+  "license": "MIT",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "node": "hardhat node",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "server": "node server/index.js",
+    "dev": "node scripts/dev.js",
+    "dev:app": "node scripts/start-app.js"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.10"
+  },
+  "dependencies": {
+    "ethers": "^6.13.2",
+    "express": "^4.19.2"
+  }
+}

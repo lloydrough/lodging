@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lodging — peer-to-peer stays on-chain</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <span class="logo">◆</span>
+        <div>
+          <h1>Lodging</h1>
+          <p class="tagline">Peer-to-peer stays on-chain — hosts' terms, no 15% middleman.</p>
+        </div>
+      </div>
+      <div id="chain-status" class="chip">connecting…</div>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>Host a place</h2>
+        <form id="listing-form">
+          <label>Title <input name="title" required value="Cosy Cabin" placeholder="Cosy Cabin" /></label>
+          <label>Location <input name="location" value="Aspen, CO" placeholder="Aspen, CO" /></label>
+          <div class="row">
+            <label>Price / night (ETH) <input name="pricePerNight" type="number" step="0.01" value="1" required /></label>
+            <label>Damage deposit (ETH) <input name="deposit" type="number" step="0.01" value="0.5" /></label>
+          </div>
+          <label>Your terms &amp; conditions
+            <textarea name="terms" rows="2" placeholder="No parties. Check-out by 11am.">No parties. Check-out by 11am. Pets welcome.</textarea>
+          </label>
+          <label>Host account
+            <select name="hostIndex" id="host-select"></select>
+          </label>
+          <button type="submit">Publish listing</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Listings</h2>
+        <div id="listings" class="cards"></div>
+      </section>
+
+      <section class="panel wide">
+        <h2>Bookings &amp; escrow</h2>
+        <div id="bookings"></div>
+      </section>
+
+      <section class="panel wide">
+        <h2>Accounts</h2>
+        <div id="accounts" class="accounts"></div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast"></div>
+    <script src="/app.js"></script>
+  </body>
+</html>

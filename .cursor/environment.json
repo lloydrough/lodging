@@ -1,0 +1,18 @@
+{
+  "name": "lodging",
+  "install": "npm install && npm run compile",
+  "terminals": [
+    {
+      "name": "chain",
+      "command": "npm run node"
+    },
+    {
+      "name": "app",
+      "command": "npm run dev:app"
+    }
+  ],
+  "ports": [
+    { "name": "web", "port": 3000 },
+    { "name": "rpc", "port": 8545 }
+  ]
+}

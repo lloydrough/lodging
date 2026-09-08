@@ -1,0 +1,14 @@
+node_modules/
+artifacts/
+cache/
+coverage/
+coverage.json
+typechain-types/
+
+# Generated at deploy time; recreated on every fresh chain.
+server/deployment.json
+
+# Logs / env
+*.log
+.env
+.env.*

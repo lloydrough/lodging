@@ -1,0 +1,145 @@
+:root {
+  --bg: #0f1220;
+  --panel: #1a1f36;
+  --panel-2: #232a4d;
+  --accent: #7c5cff;
+  --accent-2: #35d0a5;
+  --text: #e8eaf6;
+  --muted: #9aa3c7;
+  --danger: #ff5c7a;
+  --border: #2c3358;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(1200px 600px at 80% -10%, #24284a 0%, var(--bg) 55%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand { display: flex; align-items: center; gap: 14px; }
+.logo {
+  font-size: 28px;
+  color: var(--accent);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  width: 48px; height: 48px;
+  display: grid; place-items: center;
+  border-radius: 12px;
+}
+h1 { margin: 0; font-size: 22px; letter-spacing: 0.2px; }
+.tagline { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+
+.chip {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.chip.ok { color: var(--accent-2); border-color: var(--accent-2); }
+
+main {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 20px;
+  padding: 24px 32px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+}
+.panel.wide { grid-column: 1 / -1; }
+.panel h2 { margin: 0 0 16px; font-size: 16px; }
+
+form label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+form .row { display: flex; gap: 12px; }
+input, textarea, select {
+  width: 100%;
+  margin-top: 5px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 9px;
+  padding: 9px 11px;
+  font-size: 14px;
+}
+button {
+  background: linear-gradient(120deg, var(--accent), #5a7bff);
+  color: white;
+  border: none;
+  border-radius: 9px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover { filter: brightness(1.08); }
+button.secondary { background: var(--panel-2); border: 1px solid var(--border); }
+button.danger { background: linear-gradient(120deg, var(--danger), #ff7a5c); }
+button.small { padding: 6px 10px; font-size: 12px; }
+
+.cards { display: grid; gap: 14px; }
+.card {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+.card h3 { margin: 0 0 4px; font-size: 15px; }
+.card .loc { color: var(--muted); font-size: 13px; margin-bottom: 10px; }
+.card .terms { color: var(--muted); font-size: 12px; font-style: italic; margin: 8px 0; }
+.pricing { display: flex; gap: 16px; margin: 8px 0 12px; }
+.pricing b { color: var(--accent-2); }
+.book-row { display: flex; gap: 8px; align-items: end; }
+.book-row label { flex: 1; margin: 0; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); }
+th { color: var(--muted); font-weight: 500; }
+.status { font-weight: 600; }
+.status.Booked { color: #ffd166; }
+.status.CheckedOut { color: #6fb1ff; }
+.status.Completed { color: var(--accent-2); }
+.status.DepositClaimed { color: var(--danger); }
+.status.Cancelled { color: var(--muted); }
+.actions { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.accounts { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.acct { background: var(--panel-2); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+.acct .addr { font-family: monospace; font-size: 12px; color: var(--muted); word-break: break-all; }
+.acct .bal { font-size: 18px; font-weight: 700; color: var(--accent-2); margin-top: 6px; }
+
+.toast {
+  position: fixed;
+  bottom: 24px; left: 50%;
+  transform: translateX(-50%) translateY(120px);
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  transition: transform 0.25s ease;
+  max-width: 520px;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+.toast.err { border-color: var(--danger); color: #ffd0da; }
+.toast.ok { border-color: var(--accent-2); }
+.muted { color: var(--muted); }
